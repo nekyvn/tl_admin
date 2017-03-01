@@ -35,15 +35,15 @@ function listHanghoa(){
 	global $db;
 	$sql = "SELECT * FROM hanghoa";
 	$stmt = $db->prepare($sql);
-	$result = $stmt->execute();
-	return $result->fetch(PDO::FETCH_ASSOC);
+	$stmt->execute();
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 function infoHanghoa($id){
 	global $db;
 	$sql = "SELECT * FROM hanghoa WHERE id = :id";
 	$stmt = $db->prepare($sql);
-	$result = $stmt->execute(array('id' => $id));
-	return $result->fetch(PDO::FETCH_ASSOC);
+	$stmt->execute(array('id' => $id));
+	return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 function checkMaHH($id, $current_id = null){
 	global $db;
@@ -84,6 +84,7 @@ switch($act){
 	break;
 	case 'edit':
 		if(isset($_GET['id'])){
+			$id = $_GET['id'];
 			$product_info = infoHanghoa($id);
 			$tpl->assign('success', "");
 			$tpl->assign('error', '');
@@ -101,13 +102,14 @@ switch($act){
 			}
 			$tpl->assign('title', 'Cập nhật sản phẩm');
 			$tpl->assign('template', 'tpl/product/edit.tpl');
+			$tpl->assign('infoHH', $product_info);
 		} else {
 			header("Location: index.php?mode=product");
 		}
 	break;
 	case 'delete':
 		if(isset($_GET['id'])){
-			@deleteHanghoa((int)$_GET['id']);
+			deleteHanghoa($_GET['id']);
 			header("Location: index.php?mode=product");
 		} else{
 			header("Location: index.php?mode=product");
@@ -134,6 +136,13 @@ switch($act){
 			unlink($filename);
 		}
 		$tpl->assign('template', 'tpl/product/import.tpl');
+	break;
+	default:
+		$listHH = listHanghoa();
+		
+		$tpl->assign('lHH', $listHH);
+		$tpl->assign('title', 'List Hàng Hoá');
+		$tpl->assign('template', 'tpl/product/index.tpl');
 	break;
 }
 ?>

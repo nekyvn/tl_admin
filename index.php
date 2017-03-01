@@ -19,7 +19,8 @@ if(isset($_SESSION['user_id'])){
 			case 'product':
 				include('src/hanghoa.php');
 			break;
-			
+			case 'hdx':
+				include('src/hdx.php');
 			default:
 				$tpl->assign('title', 'Admin Home Page');
 				$tpl->assign('template', 'tpl/index/index.tpl');

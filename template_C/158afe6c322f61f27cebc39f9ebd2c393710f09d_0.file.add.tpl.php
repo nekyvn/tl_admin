@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31-dev/47, created on 2017-02-27 11:33:17
+/* Smarty version 3.1.31-dev/47, created on 2017-02-28 12:51:35
   from "/Applications/MAMP/htdocs/tl_admin/template/tpl/product/add.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31-dev/47',
-  'unifunc' => 'content_58b3ac0dbbc011_40420492',
+  'unifunc' => 'content_58b50fe7376ed0_78699661',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '158afe6c322f61f27cebc39f9ebd2c393710f09d' => 
     array (
       0 => '/Applications/MAMP/htdocs/tl_admin/template/tpl/product/add.tpl',
-      1 => 1488169996,
+      1 => 1488261091,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58b3ac0dbbc011_40420492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58b50fe7376ed0_78699661 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
 	<ol class="breadcrumb">
@@ -109,7 +109,7 @@ function content_58b3ac0dbbc011_40420492 (Smarty_Internal_Template $_smarty_tpl)
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                
             </div>
         </div>
         <!-- /.modal-content -->
